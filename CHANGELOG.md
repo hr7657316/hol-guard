@@ -95,6 +95,31 @@ Older releases are preserved in the [changelog archive](docs/changelog-archive.m
 * **native:** a package-intent parse now sends the caller's `PATH` to the resident. The resident is long-lived, so its own `PATH` is the one it was spawned with; a manager it cannot resolve (`npx` from a test or tool directory) made the TypeScript launch evidence incomplete and sent a contained typecheck back to review even though the caller resolved the manager fine.
 * **native:** a resident that answers a context-digest request with its own error envelope is now reported by that code — and recorded against the resilience breaker — instead of being flattened into `native_context_digest_result_invalid`. An envelope outside the contract keeps its code in the rejection reason, and a rejected result names the contract clause that rejected it with the offending keys, so a foreign frame, a stale frame and a truncated read are no longer indistinguishable.
 
+## [3.50.0](https://github.com/hashgraph-online/hol-guard/compare/v3.49.0...v3.50.0) (2026-10-17)
+
+
+### Features
+
+* **guard:** decide a policy document in the runtime instead of beside it ([#5042](https://github.com/hashgraph-online/hol-guard/issues/5042)) ([fd5567f](https://github.com/hashgraph-online/hol-guard/commit/fd5567f5596eab63d6ff2f3bd1dc402eb2636d94))
+
+
+### Bug Fixes
+
+* **command:** close three heredoc scanner evasions in the shell structure scan ([#3806](https://github.com/hashgraph-online/hol-guard/issues/3806)) ([48caaa2](https://github.com/hashgraph-online/hol-guard/commit/48caaa260fbb5ca95b911dcf9881ed3e41cb5d30))
+* **guard:** answer a file test for a name and a path a read screen holds back ([#5026](https://github.com/hashgraph-online/hol-guard/issues/5026)) ([ffa0eaa](https://github.com/hashgraph-online/hol-guard/commit/ffa0eaa6ac9a1ca8daaa18cc587937dbd501cfd5))
+* **guard:** answer a queued hint from the caller's shell, not the daemon's ([#5032](https://github.com/hashgraph-online/hol-guard/issues/5032)) ([20d5317](https://github.com/hashgraph-online/hol-guard/commit/20d5317ae9d93d5bdb8eb41582950dcdfdda60c4))
+* **guard:** contain a sibling build the agent spells from home ([#5035](https://github.com/hashgraph-online/hol-guard/issues/5035)) ([d831569](https://github.com/hashgraph-online/hol-guard/commit/d8315693c5f9325bd7050d09c38e24fc42812ab9))
+* **guard:** keep Windows launch approvals reusable with a long PATH ([#5040](https://github.com/hashgraph-online/hol-guard/issues/5040)) ([6529eb9](https://github.com/hashgraph-online/hol-guard/commit/6529eb95140759bae3e1500bd4cad5ff08b611bf))
+* **guard:** let git blame, describe and reflog read history without review ([#5043](https://github.com/hashgraph-online/hol-guard/issues/5043)) ([848feec](https://github.com/hashgraph-online/hol-guard/commit/848feec23e0203429ba930a62ff1ceffec266b32))
+* **guard:** let the native runtime name the action a tool call enforces ([#5027](https://github.com/hashgraph-online/hol-guard/issues/5027)) ([f02f139](https://github.com/hashgraph-online/hol-guard/commit/f02f1396e75d0e5417a396f22162dad2f20be2d8))
+* **guard:** read a braced parameter expansion as the value it is ([#5036](https://github.com/hashgraph-online/hol-guard/issues/5036)) ([87c737d](https://github.com/hashgraph-online/hol-guard/commit/87c737d997a3be74bbc50da5977792be0ee74874))
+* **guard:** read a piped rg as the filter it is, not a walk of the tree ([#5028](https://github.com/hashgraph-online/hol-guard/issues/5028)) ([bf71b74](https://github.com/hashgraph-online/hol-guard/commit/bf71b74784d2ad640166b559cdfdd87c79415c2e))
+* **guard:** read a project's own dotfile as the document it is ([#5025](https://github.com/hashgraph-online/hol-guard/issues/5025)) ([8fe97d2](https://github.com/hashgraph-online/hol-guard/commit/8fe97d2f0ab005615311abdd9027791483af01c6))
+* **guard:** read a word spelled with ANSI-C escapes ([#5041](https://github.com/hashgraph-online/hol-guard/issues/5041)) ([7962220](https://github.com/hashgraph-online/hol-guard/commit/796222008c76a34feaf1415e0d11774a87ea12f9))
+* **guard:** read the program a scheduling prefix runs ([#5037](https://github.com/hashgraph-online/hol-guard/issues/5037)) ([a89e162](https://github.com/hashgraph-online/hol-guard/commit/a89e162d8e3460386a5d5c7898fb8d4f993fc960))
+* **guard:** read Windows machine policy from the registry natively ([#5039](https://github.com/hashgraph-online/hol-guard/issues/5039)) ([2d74e89](https://github.com/hashgraph-online/hol-guard/commit/2d74e89cb2e27a3b89bda0ab13b52c6747988a68))
+* **guard:** tell the pre-tool lane where the command runs ([#5023](https://github.com/hashgraph-online/hol-guard/issues/5023)) ([a26b875](https://github.com/hashgraph-online/hol-guard/commit/a26b8752d9495417563d37a1c9782a6b39e9586c))
+
 ## [3.49.0](https://github.com/hashgraph-online/hol-guard/compare/v3.48.0...v3.49.0) (2026-10-17)
 
 
