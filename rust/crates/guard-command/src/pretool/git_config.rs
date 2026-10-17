@@ -53,6 +53,8 @@ pub(super) fn execution_free_paging(
             | "show"
             | "grep"
             | "branch"
+            | "tag"
+            | "clean"
             | "hash-object"
             | "config"
             | "merge-base"
@@ -269,8 +271,9 @@ fn probe(
     // Like status, hash-object pages only when its own pager.* key says so;
     // config pages by default only for its listing forms.
     let pages_by_default = match operation {
+        // `clean` prints its preview without a pager.
         "status" | "hash-object" | "merge-base" | "ls-tree" | "cat-file" | "show-ref"
-        | "for-each-ref" | "rev-list" => false,
+        | "for-each-ref" | "rev-list" | "clean" => false,
         "config" => super::git_config_reads::pages_by_default(&remaining[1..]),
         _ => true,
     };

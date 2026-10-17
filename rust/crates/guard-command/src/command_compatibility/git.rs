@@ -190,6 +190,8 @@ pub(super) fn inspection_arguments<'a>(
                 | "log"
                 | "show"
                 | "branch"
+                | "tag"
+                | "clean"
                 | "hash-object"
                 | "rev-parse"
                 | "merge-base"

@@ -16,8 +16,8 @@ pub(super) fn may_run(operation: &str, options: &[&str]) -> bool {
             !(options.iter().any(|option| summary_format(option)) && options.iter().all(known))
         }
         // grep honors textconv only with --textconv, which its read proof
-        // refuses.
-        "branch" | "hash-object" | "config" | "grep" => false,
+        // refuses. The branch, tag and clean forms print names only.
+        "branch" | "tag" | "clean" | "hash-object" | "config" | "grep" => false,
         // Only the plain object-read forms, which never convert, reach the probe.
         // Reference listings and commit walks print names and object ids only.
         "ls-tree" | "cat-file" | "show-ref" | "for-each-ref" | "rev-list" => false,
